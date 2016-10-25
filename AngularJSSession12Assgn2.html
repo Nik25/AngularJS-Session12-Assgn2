@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="AngularApp">
+<head>
+	<title>AngularJS-Session12-Assignment2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script>
+		var myapp = angular.module("AngularApp", []);
+		myapp.controller("UserController", function($scope) {
+			$scope.user = {
+				firstName: "homer",
+				lastName: "simson",
+				balance: 7.47520				
+			}
+		});
+	</script>
+</head>
+<body>
+
+<div class="container-fluid">
+	<div ng-controller="UserController">
+		<h3>User Details: </h3>
+		<p><strong>First Name: </strong>{{user.firstName | uppercase}}</p>
+		<p><strong>Last Name: </strong>{{user.lastName | uppercase}}</p>
+		<p><strong>Balance: </strong>{{user.balance | number : 2}}</p>
+	</div>
+</div>
+
+</body>
+</html>
